@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Aprovação</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+        }
+
+        .caixa {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .resultado {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .resultado.aprovado {
+            background: #d4edda;
+            color: #28a745;
+            border: 2px solid #28a745;
+        }
+
+        .resultado.reprovado {
+            background: #f8d7da;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+        }
+
+        h1 {
+            color: #1a1a2e;
+        }
+
+        .info {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caixa">
+        <h1>📊 Verificador de Aprovação</h1>
+        <p class="info">Média: <span id="mediaInfo"></span></p>
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script>
+        // ============================================================
+        // DESAFIO: Verifique se a média é suficiente para aprovação
+        // Regra: media >= 7 → "✅ Aprovado" (classe .aprovado)
+        //        senão → "❌ Reprovado" (classe .reprovado)
+        // ============================================================
+
+        let media = 8;
+        document.getElementById("mediaInfo").textContent = media;
+
+        // ⬇️ ELEMENTO JÁ CAPTURADO ⬇️
+        let resultado = document.getElementById("resultado");
+        if (media >= 7) {
+            (resultado.textContent = "aprovado✅ ")
+                (resultado.claseName = " resultado aprovado✅ ")
+        }
+        else {
+            (resultado, textContent = "reprovado❌")
+                (resultado.className = "resultado reprovado❌")
+        }
+        // ⬇️ COMPLETE A LÓGICA AQUI ⬇️
+        // Use if/else para verificar a média
+        // Altere o texto e a classe do elemento "resultado"
+
+        // DICA: resultado.textContent = "✅ Aprovado";
+        // DICA: resultado.className = "resultado aprovado";
+        // ⬆️ COMPLETE A LÓGICA AQUI ⬆️
+    </script>
+</body>
+
+</html>

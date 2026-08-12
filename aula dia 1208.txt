@@ -1,0 +1,66 @@
+aula dia 12/08
+
+Verificador de Aprovação (if/else)
+
+let media = 8; 
+
+if (media >= 7)
+{ console.log("Aprovado"); }
+ else { console.log("Reprovado"); }
+
+sida
+
+aprovado
+
+
+2Classificação de Nota (else if)
+
+
+let nota = 6; if (nota >= 9) { console.log("exelente"); } else if (nota >= 7) { console.log("bom"); } else if (nota >= 5) { console.log("regular"); }
+else { console.log("insuficiente"); }
+
+saída
+
+
+ ex3
+ Par ou Ímpar (if com operador %)
+
+ let numero = 7; if (numero % 2 === 0) { console.log("Par"); } else { console.log("Ímpar"); }
+ 
+saida
+Ímpar
+
+ex4
+Verificador de Saldo (if/else com comparação)
+
+
+let saldo = 100; let valorProduto = 80; if (saldo >= valorProduto) { console.log("Compra aprovada"); } else { console.log("Saldo insuficiente"); }
+
+
+saída
+]
+Compra aprovada
+
+
+ex5 
+ Dia da Semana (switch case)
+
+let dia = 3; 
+switch (dia) 
+
+{ case 1: console.log("Domingo"); 
+break;
+
+case 2: console.log("Segunda-feira");
+ break; 
+ 
+ case 3: console.log("Terça-feira");
+  break; 
+  
+  default: console.log("Dia inválido"); }
+167 ms
+Terça-feira
+
+
+ saída
+Terça-feira

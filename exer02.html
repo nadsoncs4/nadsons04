@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificador de Notas</title>
+    <style>
+        body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; margin: 0; }
+        .caixa { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .classificacao { font-size: 1.8rem; font-weight: bold; margin-top: 15px; padding: 15px; border-radius: 10px; }
+        .classificacao.excelente { background: #d4edda; color: #28a745; border: 2px solid #28a745; }
+        .classificacao.bom { background: #d1ecf1; color: #0c5460; border: 2px solid #17a2b8; }
+        .classificacao.regular { background: #fff3cd; color: #856404; border: 2px solid #ffc107; }
+        .classificacao.insuficiente { background: #f8d7da; color: #dc3545; border: 2px solid #dc3545; }
+        h1 { color: #1a1a2e; }
+        .info { font-size: 1.1rem; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h1>📊 Classificador de Notas</h1>
+        <p class="info">Nota: <span id="notaInfo"></span></p>
+        <div id="classificacao" class="classificacao"></div>
+    </div>
+
+    <script>
+        // ============================================================
+        // DESAFIO: Classifique a nota usando else if
+        // Regras:
+        // nota >= 9    → "🌟 Excelente" (classe .excelente)
+        // nota >= 7    → "✅ Bom"       (classe .bom)
+        // nota >= 5    → "📚 Regular"   (classe .regular)
+        // senão        → "❌ Insuficiente" (classe .insuficiente)
+        // ============================================================
+
+        let nota = 6;
+        document.getElementById("notaInfo").textContent = nota;
+
+        // ⬇️ ELEMENTO JÁ CAPTURADO ⬇️
+        let classDiv = document.getElementById("classificacao");
+
+        // ⬇️ COMPLETE A LÓGICA AQUI ⬇️
+
+        // ⬇️ LÓGICA COMPLETA ⬇️
+        if (nota >= 9) {
+            classificacao.textContent = "🌟 Excelente";
+            classificacao.className = "classificacao excelente";
+        } else if (nota >= 7) {
+            classificacao.textContent = "✅ Bom";
+            classificacao.className = "classificacao bom";
+        } else if (nota >= 5) {
+            classificacao.textContent = "📚 Regular";
+            classificacao.className = "classificacao regular";
+        } else {
+            classificacao.textContent = "❌ Insuficiente";
+            classificacao.className = "classificacao insuficiente";}
+        
+    </script>
+</body>
+</html>

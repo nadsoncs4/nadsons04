@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <style>
+        body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; margin: 0; }
+        .caixa { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .info { font-size: 1.1rem; color: #2c3e50; margin: 8px 0; }
+        .info .dado { color: #f7971e; font-weight: bold; }
+        .resultado-imc { font-size: 2.5rem; font-weight: bold; color: #f7971e; margin: 10px 0; }
+        .barra-container { width: 100%; height: 20px; background: #e9ecef; border-radius: 10px; overflow: hidden; margin: 10px 0; }
+        .barra-container .barra { height: 100%; width: 0%; border-radius: 10px; transition: all 0.5s ease; }
+        .barra.abaixo-peso { background: #ffc107; width: 25%; }
+        .barra.normal { background: #28a745; width: 50%; }
+        .barra.sobrepeso { background: #fd7e14; width: 75%; }
+        .barra.obesidade { background: #dc3545; width: 100%; }
+        .classificacao { font-size: 1.2rem; font-weight: bold; padding: 10px; border-radius: 10px; margin-top: 10px; }
+        .classificacao.abaixo-peso { background: #fff3cd; color: #856404; }
+        .classificacao.normal { background: #d4edda; color: #28a745; }
+        .classificacao.sobrepeso { background: #ffe5cc; color: #fd7e14; }
+        .classificacao.obesidade { background: #f8d7da; color: #dc3545; }
+        h1 { color: #1a1a2e; }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <h1>📊 Calculadora de IMC</h1>
+        <div class="info">Peso: <span class="dado" id="pesoInfo"></span> kg</div>
+        <div class="info">Altura: <span class="dado" id="alturaInfo"></span> m</div>
+        <div id="imcValor" class="resultado-imc">--</div>
+        <div class="barra-container">
+            <div id="barra" class="barra"></div>
+        </div>
+        <div id="classificacao" class="classificacao"></div>
+    </div>
+
+    <script>
+        // ============================================================
+        // DESAFIO: Calcule o IMC e classifique
+        // Fórmula: imc = peso / (altura * altura)
+        // Classificação:
+        // imc < 18.5 → "Abaixo do peso" + barra .abaixo-peso
+        // imc < 25   → "Peso normal"   + barra .normal
+        // imc < 30   → "Sobrepeso"     + barra .sobrepeso
+        // imc >= 30  → "Obesidade"     + barra .obesidade
+        // ============================================================
+
+        let peso = 85;
+        let altura = 1.72;
+
+        document.getElementById("pesoInfo").textContent = peso;
+        document.getElementById("alturaInfo").textContent = altura;
+
+        // ⬇️ ELEMENTOS JÁ CAPTURADOS ⬇️
+        let imcElemento = document.getElementById("imcValor");
+        let barra = document.getElementById("barra");
+        let classDiv = document.getElementById("classificacao");
+
+        // ⬇️ COMPLETE A LÓGICA AQUI ⬇️
+                // 1. Cálculo do IMC
+                let imc = peso / (altura * altura);
+
+// 2. Exibe o IMC formatado com 2 casas decimais
+imcElemento.textContent = imc.toFixed(2);
+
+// 3. Classificação e aplicação das classes no HTML
+if (imc < 18.5) {
+    classDiv.textContent = "Abaixo do peso";
+    barra.className = "barra abaixo-peso";
+    classDiv.className = "classificacao abaixo-peso";
+} else if (imc < 25) {
+    classDiv.textContent = "Peso normal";
+    barra.className = "barra normal";
+    classDiv.className = "classificacao normal";
+} else if (imc < 30) {
+    classDiv.textContent = "Sobrepeso";
+    barra.className = "barra sobrepeso";
+    classDiv.className = "classificacao sobrepeso";
+} else {
+    classDiv.textContent = "Obesidade";
+    barra.className = "barra obesidade";
+    classDiv.className = "classificacao obesidade";
+}
+        // ⬆️ COMPLETE A LÓGICA AQUI ⬆️
+    </script>
+</body>
+</html>
